@@ -4,15 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run dev-server & npm run start-csr-dev",
-    "start-csr-dev": "NODE_ENV=development node server/index.js",
+    "dev": "npm-run-all --parallel dev-server start-csr-dev",
+    "start-csr-dev": "better-npm-run start-csr-dev",
     "dev-server": "webpack-dev-server --config config/webpack.dev.js"
+  },
+  "betterScripts": {
+    "start-csr-dev": {
+      "command": "node ./server/index.js",
+      "env" : {
+        "NODE_ENV": "development"
+      }
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "better-npm-run": "^0.0.15",
     "express": "^4.15.3",
+    "npm-run-all": "^4.0.2",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
