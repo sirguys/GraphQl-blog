@@ -1,9 +1,8 @@
 const fs = require('fs')
 const path = require('path')
+const paths = require('../config/paths')
 
-const root = path.resolve(__dirname, '..')
-const publicPath = path.resolve(root, 'public')
-const filepath = path.resolve(publicPath, 'csr.dev.html')
+const filepath = path.resolve(paths.public, 'csr.dev.html')
 const markup = fs.readFileSync(filepath, 'utf-8')
 
 module.exports = (req, res) => {
