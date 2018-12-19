@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-function App() {
-    return (
-        <div>HI</div>
-    )
+class App extends React.Component {
+    render() {
+        return (
+            <div>HI</div>
+        )
+    }
 }
 
 ReactDOM.render(
